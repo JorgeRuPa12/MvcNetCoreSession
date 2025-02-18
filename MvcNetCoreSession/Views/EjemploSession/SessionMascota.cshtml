@@ -1,0 +1,20 @@
+﻿@{
+    Mascota mascota = ViewData["MASCOTA"] as Mascota;
+}
+
+<h1>Session Binary Mascota</h1>
+
+<h2>@ViewData["MENSAJE"]</h2>
+
+<p>
+    <a asp-controller="EjemploSession" asp-action="SessionMascota" asp-route-accion="almacenar">Almacenar</a>
+    <a asp-controller="EjemploSession" asp-action="SessionMascota" asp-route-accion="mostrar">Mostrar</a>
+</p>
+
+@if(mascota != null){
+    <ul class="list-group">
+        <li class="list-group-item">@mascota.Nombre</li>
+        <li class="list-group-item">@mascota.Raza</li>
+        <li class="list-group-item">@mascota.Edad</li>
+    </ul>
+}
